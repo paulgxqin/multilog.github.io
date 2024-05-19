@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+
+  
+
+  
+  
+
+  
+
+  <!-- Primary Meta Tags -->
+  <title>Title of your site | About eAudit</title>
+  <meta name="title" content="Title of your site | About eAudit"/>
+  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:site_name" content="Title of your site | About eAudit"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="http://localhost:4000/_pages/about"/>
+  <meta property="og:title" content="Title of your site | About eAudit"/>
+  <meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."/>
+  <meta property="og:image" content="http://localhost:4000"/>
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image"/>
+  <meta property="twitter:url" content="http://localhost:4000/_pages/about"/>
+  <meta property="twitter:title" content="Title of your site | About eAudit"/>
+  <meta property="twitter:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."/>
+  <meta property="twitter:image" content="http://localhost:4000"/>
+  
+
+  <link rel="stylesheet" href="http://localhost:4000/assets/css/main.css"/>
+  <link rel="canonical" href="http://localhost:4000/_pages/about"/>
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico" type="image/x-icon"/>
+
+  <!-- Google Analytics -->
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', "", "auto");
+    ga('send', "pageview");
+  </script>
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+
+</head>
+
+
+  <body>
+    <header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" href="http://localhost:4000/">
+      Title of your site
+      <!-- <img src="http://localhost:4000/assets/img/title.png" alt="Title of your site" /> -->
+    </a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon"></a>
+
+      <div class="menu">
+        
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <h1>About eAudit</h1>
+<p>This is the eAudit suite for recording provenance-related system calls using the Linux ebpf framework, and to subsequently print this information in a human-readable format. This initial release accompanies our research paper at IEEE Symposium on Security and Privacy, 2024.</p>
+
+<h2>Overview</h2>
+<p>System call logs are the last line of defense against sophisticated cyber attacks, providing a detailed and causally complete record for post-attack investigation. This use requires logging to be enabled at all times, but unfortunately, existing systems for system call logging do not seem to have been designed or engineered for such use. Consequently, they are prone to losing a large fraction of events during peak loads, and moreover, introduce significant performance and storage overheads. We developed eAudit to mitigate these drawbacks, and to enable "always on" audit logging. Our specific goals are to:</p>
+<ul>
+  <li>Enable systems to support peak workloads without a significant slowdown,</li>
+  <li>Avoid losing system calls at any possible system load, and</li>
+  <li>Minimize the latency for logging.</li>
+</ul>
+
+<p>We anticipate continued development of this software, with future additions focused on reducing the data volume, further improving the performance and robustness, and providing an API for system call analysis tools.</p>
+
+<h2>Software Organization</h2>
+<p>The top-level directory contains most of the source code, with the remaining code appearing in the <code>lib/</code> directory.</p>
+<p>The directory <code>eval/</code> contains benchmarks, scripts and tools used in our evaluation in our paper.</p>
+
+<h2>Source Code</h2>
+<p>The software can be downloaded from <a href="https://github.com/seclab-stonybrook/eaudit" target="_blank">GitHub</a>.</p>
+
+<h2>License</h2>
+<p>This software release is governed by GPL v3 copyright license. <a href="https://github.com/seclab-stonybrook/eaudit/blob/master/LICENSE" target="_blank">View License</a>.</p>
+
+<h2>Prerequisites and Installation</h2>
+<p>Installation instructions are available at <a href="https://github.com/seclab-stonybrook/eaudit/blob/master/INSTALL.md" target="_blank">INSTALL.md</a>.</p>
+
+<h2>Usage</h2>
+<p>There are two top-level programs: <code>ecapd</code> and <code>eaudit</code>. <code>ecapd</code> is for logging system calls, while <code>eaudit</code> is used to parse/print the collected logs in a human-readable format. Being based on ebpf, <code>ecapd</code> requires root privilege to run. Both programs support a -h option that prints a help message documenting the command-line options.</p>
+
+<h2>Behind the Scene</h2>
+<p><code>ecapd</code> is a wrapper shell script that invokes <code>eauditd.py</code>, which loads and manages the ebpf code in <code>eauditk.c</code>. <code>eauditd.py</code> also loads the code from <code>eauditd.C</code> and sets it up to read the captured data (from ebpf's ring buffer) and write it into the capture file.</p>
+<p><code>eaudit.C</code> and <code>eParser.C</code> contain the code that compiles into <code>eaudit</code>, the program that parses capture files and produces a human-readable output. <code>eauditk.c</code> is compiled on the fly and loaded into the kernel by <code>eauditd.py</code>.</p>
+
+<h2>Publication</h2>
+<p><strong>eAudit: A Fast, Scalable and Deployable Audit Data Collection System</strong></p>
+<p>R. Sekar, Hanke Kimm, and Rohit Aich,</p>
+<p>Stony Brook University, NY, USA.</p>
+<p>Copyright (c) 2022-23, R. Sekar and Secure Systems Lab, Stony Brook University.</p>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <h4>CONTACT</h4>
+
+        <div class="social-links">
+          
+            <div class="social-link contact-links">
+
+              
+              <img
+                src="http://localhost:4000/assets/img/icons/email.png"
+                alt="email"
+              />
+              <a href="mailto:yourmail@domain.com" id="email-link">
+                
+                  yourmail@domain.com
+                
+              </a>
+            </div>
+
+          
+        </div>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        
+      </div>
+
+      
+        <div class="footer-col footer-col-3 powered-by">
+          <p>
+            powered by <a href="https://github.com/eliottvincent/bay">Bay</a> | 2024
+          </p>
+        </div>
+      
+    </div>
+  </div>
+</footer>
+
+
+  
+
+
+
+
+
+    
+    <script type="text/javascript" src="http://localhost:4000/assets/js/vendor/cash-4.1.5.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/assets/js/site.js"></script>
+
+  </body>
+</html>
