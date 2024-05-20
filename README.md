@@ -1,11 +1,9 @@
-Link: https://www.multi-log.com/
+**Link:** [https://www.multi-log.com/](https://www.multi-log.com/)
 
-To Run:
-please install jekyll,
-https://jekyllrb.com/docs/
+**To Run:** Please install Jekyll by following the instructions at [Jekyll Installation Guide](https://jekyllrb.com/docs/).
 
-Before each commit:
-run 
+**Before Each Commit:** Run the following commands:
+```bash
 bundle update
 bundle
 bundle exec jekyll
