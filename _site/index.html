@@ -24,23 +24,23 @@
   
 
   <!-- Primary Meta Tags -->
-  <title>Title of your site</title>
-  <meta name="title" content="Title of your site"/>
-  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."/>
+  <title>Title of site</title>
+  <meta name="title" content="Title of site"/>
+  <meta name="description" content="this is a personal site for testing"/>
 
   <!-- Open Graph / Facebook -->
-  <meta property="og:site_name" content="Title of your site"/>
+  <meta property="og:site_name" content="Title of site"/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="http://localhost:4000/"/>
-  <meta property="og:title" content="Title of your site"/>
-  <meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."/>
+  <meta property="og:title" content="Title of site"/>
+  <meta property="og:description" content="this is a personal site for testing"/>
   <meta property="og:image" content="http://localhost:4000"/>
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image"/>
   <meta property="twitter:url" content="http://localhost:4000/"/>
-  <meta property="twitter:title" content="Title of your site"/>
-  <meta property="twitter:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."/>
+  <meta property="twitter:title" content="Title of site"/>
+  <meta property="twitter:description" content="this is a personal site for testing"/>
   <meta property="twitter:image" content="http://localhost:4000"/>
   
 
@@ -71,7 +71,7 @@
     <header class="site-header">
   <div class="wrapper">
 <a class="site-title" href="/">
-    Title of your site
+    Title of site
 </a>
 
 
@@ -107,12 +107,12 @@
     <div class="page-content">
         <div class="home">
           <div class="wrapper">
-  <h1>About eAudit</h1>
-    <p>This is the eAudit suite for recording provenance-related system calls using the Linux ebpf framework, and to subsequently print this information in a human-readable format. This initial release accompanies our research paper at IEEE Symposium on Security and Privacy, 2024.</p>
+  <h1>About xxx</h1>
+    <p>This is the xxx </p>
 
     <!-- Navigation Links -->
     <h2>Contents</h2>
-    <ul>
+    <!-- <ul>
         <li><a href="#overview">Overview</a></li>
         <li><a href="#software-organization">Software Organization</a></li>
         <li><a href="#source-code">Source Code</a></li>
@@ -121,7 +121,7 @@
         <li><a href="#usage">Usage</a></li>
         <li><a href="#behind-the-scene">Behind the Scene</a></li>
         <li><a href="#publication">Publication</a></li>
-    </ul>
+    </ul> -->
 
     <ul>
         <li><a href="../404.html">404</a></li>
@@ -136,38 +136,35 @@
 
     <!-- Content Sections -->
     <h2 id="overview">Overview</h2>
-    <p>System call logs are the last line of defense against sophisticated cyber attacks, providing a detailed and causally complete record for post-attack investigation. This use requires logging to be enabled at all times, but unfortunately, existing systems for system call logging do not seem to have been designed or engineered for such use. Consequently, they are prone to losing a large fraction of events during peak loads, and moreover, introduce significant performance and storage overheads. We developed eAudit to mitigate these drawbacks, and to enable "always on" audit logging. Our specific goals are to:</p>
+    <p>overview content</p>
     <ul>
-        <li>Enable systems to support peak workloads without a significant slowdown,</li>
-        <li>Avoid losing system calls at any possible system load, and</li>
-        <li>Minimize the latency for logging.</li>
+        <li>overview 1</li>
+        <li>overview 2</li>
+        <li>overview 3</li>
     </ul>
 
     <h2 id="software-organization">Software Organization</h2>
-    <p>The top-level directory contains most of the source code, with the remaining code appearing in the <code>lib/</code> directory.</p>
-    <p>The directory <code>eval/</code> contains benchmarks, scripts and tools used in our evaluation in our paper.</p>
+    <p>11 <code>lib/</code> directory.</p>
+    <p>22</p>
 
     <h2 id="source-code">Source Code</h2>
-    <p>The software can be downloaded from <a href="https://github.com/seclab-stonybrook/eaudit" target="_blank">GitHub</a>.</p>
+    <p>11</a>.</p>
 
     <h2 id="license">License</h2>
-    <p>This software release is governed by GPL v3 copyright license. <a href="https://github.com/seclab-stonybrook/eaudit/blob/master/LICENSE" target="_blank">View License</a>.</p>
+    <p>xx</a>.</p>
 
-    <h2 id="prerequisites-and-installation">Prerequisites and Installation</h2>
-    <p>Installation instructions are available at <a href="https://github.com/seclab-stonybrook/eaudit/blob/master/INSTALL.md" target="_blank">INSTALL.md</a>.</p>
+    <h2 id="prerequisites-and-installation">How ?</h2>
+    <p>xxxx</a>.</p>
 
     <h2 id="usage">Usage</h2>
-    <p>There are two top-level programs: <code>ecapd</code> and <code>eaudit</code>. <code>ecapd</code> is for logging system calls, while <code>eaudit</code> is used to parse/print the collected logs in a human-readable format. Being based on ebpf, <code>ecapd</code> requires root privilege to run. Both programs support a -h option that prints a help message documenting the command-line options.</p>
+    <p>usage</p>
 
     <h2 id="behind-the-scene">Behind the Scene</h2>
-    <p><code>ecapd</code> is a wrapper shell script that invokes <code>eauditd.py</code>, which loads and manages the ebpf code in <code>eauditk.c</code>. <code>eauditd.py</code> also loads the code from <code>eauditd.C</code> and sets it up to read the captured data (from ebpf's ring buffer) and write it into the capture file.</p>
-    <p><code>eaudit.C</code> and <code>eParser.C</code> contain the code that compiles into <code>eaudit</code>, the program that parses capture files and produces a human-readable output. <code>eauditk.c</code> is compiled on the fly and loaded into the kernel by <code>eauditd.py</code>.</p>
+    <p>xxxx</p>
 
     <h2 id="publication">Publication</h2>
-    <p><strong>eAudit: A Fast, Scalable and Deployable Audit Data Collection System</strong></p>
-    <p>R. Sekar, Hanke Kimm, and Rohit Aich,</p>
-    <p>Stony Brook University, NY, USA.</p>
-    <p>Copyright (c) 2022-23, R. Sekar and Secure Systems Lab, Stony Brook University.</p>
+    
+    <p>Copyright xxx.</p>
 
         </div>
         </div>
