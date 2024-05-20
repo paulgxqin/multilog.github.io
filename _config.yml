@@ -44,6 +44,13 @@ header:
     #   slug: /     # <-- index.md
     # - name: Blog  # <-- blog.md
     # - name: Whatever  # <-- whatever.md
+    - name: Home
+      slug: /
+    - name: Source Code
+      
+    - name: About
+      slug: /aboutus/
+
 
 
 footer:
