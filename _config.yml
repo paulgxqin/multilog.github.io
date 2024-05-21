@@ -44,10 +44,12 @@ header:
     # - name: Whatever  # <-- whatever.md
     - name: Home
       slug: /
+
     - name: Dataset
+      slug: /dataset/
       
-    - name: About
-      slug: /aboutus/
+    - name: Result 
+      slug: /result/
 
 
 
