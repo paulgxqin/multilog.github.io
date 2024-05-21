@@ -50,6 +50,8 @@ header:
       
     - name: Result 
       slug: /result
+    - name: Something
+      slug: /something
 
 
 
