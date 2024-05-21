@@ -46,10 +46,10 @@ header:
       slug: /
 
     - name: Dataset
-      slug: /dataset/
+      slug: /dataset
       
     - name: Result 
-      slug: /result/
+      slug: /result
 
 
 
