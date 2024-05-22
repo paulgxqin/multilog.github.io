@@ -121,8 +121,7 @@
     system behaviors, for example, a NIC controller witnesses network behaviors, a SATA controller
     observes hard-disk behaviors, memory controllers can be used to track memory accesses, and so
     on. These controllers can be queried to collect a rich set of events, which could be uploaded to a
-    secure cloud or sent to trusted hardware such as a GPU for subsequent intrusion detection and forensics. The comprehensive aggregated set of traces can substantially improve, not only defense effec-
-    tiveness, but also resilience in Byzantine environments where any component (outside the trusted
+    secure cloud or sent to trusted hardware such as a GPU for subsequent intrusion detection and forensics. The comprehensive aggregated set of traces can substantially improve, not only defense effectiveness, but also resilience in Byzantine environments where any component (outside the trusted
     compute base (TCB)) can be presumed to be compromised. For example, although ransomware
     and zip have indistinguishable file system behaviors, they can be distinguished by looking at their
     memory accesses and/or network behaviors. Moreover, when information from multiple modalities
@@ -141,7 +140,14 @@
         <li><a href="#publication">Publication</a></li>
         <li><a href="../404.html">404</a></li>
         <li><a href="/work.html">post</a></li>
-    </ul> -->
+    </ul> 
+
+    <h2 id="software-organization">Software Organization</h2>
+    <p>11 <code>lib/</code> directory.</p>
+
+    <h2 id="license">License</h2>
+    <p>This software release is governed by <span style="font-weight: bold;">GPL v3</span> copyright license.</a></p>
+    -->
 
     <ul>
         <li><a href="#malware">Malware Collection</a></li>
@@ -153,8 +159,6 @@
 
     <!-- Content Sections -->
 
-    <h2 id="software-organization">Software Organization</h2>
-    <p>11 <code>lib/</code> directory.</p>
 
     <h2 id="malware">Malware Collection</h2>
     <p>
@@ -183,18 +187,18 @@
 
     <h2 id="setup">Environment Setup</h2>
     <p>We use VirtualBox to run malware, the network is configured as host-only and the disk is isolated from host. 
-    Each time, we start with the same snapshot “start_snap_for_malware” , we run malware and collect traces.</a></p>
+    Each time, we start with the same snapshot “start_snap_for_malware” , we run <em><strong>patched</strong></em> malware and collect traces.</a></p>
 
     <h2 id="trace">Trace Collection</h2>
-    <p>xxxx</p>
+    <p>For each <em><strong>patched</strong></em> malware, we execute it and collect four types of traces: syscall traces, network traces, disk traces, and perf traces.</p>
+    <p> More details can be found at <a href="../dataset/">dataset</a>.</p>
 
 
     <h2 id="model">Model Training</h2>
-    <p>xxxx</a>.</p>
+    <p>Extract 240 semantic features from four types of log</a>.</p>
+    <p> More details can be found at <a href="../result/">result</a>.</p>
 
 
-    <h2 id="license">License</h2>
-    <p>This software release is governed by <span style="font-weight: bold;">GPL v3</span> copyright license.</a></p>
 
 
 

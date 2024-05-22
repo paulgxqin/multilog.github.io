@@ -18,12 +18,12 @@ We call a program point that should be considered during the patching process, i
 
 
 <h2>Challenges</h2>
-1. How to concretize the PMP execution results, i.e., generating directly runnable unleashed malwares (w/o QEMU), as discussed in the last time.
+1. How to concretize the PMP execution results, i.e., generating directly runnable unleashed malwares (w/o QEMU).
 
 2. How to automatically identify the patching strategy for each individual program point? Note that the searching space is huge when considering the combination. 
-* There are n program points (~300 in the previous malware)
+* There are n program points (~300 in one malware)
 * We have m patching strategies for each program point (3 strategies)
-* In total, we can have mn potential patching versions in the searching space. ($3^{300}=10^{143}$)
+* In total, we can have $m^n$ potential patching versions in the searching space. ($3^{300}=10^{143}$)
 
 <h2>Solution</h2>
 1. Combining PMP with static rewriting. 
@@ -34,6 +34,5 @@ We call a program point that should be considered during the patching process, i
 In the context of program testing, fuzzing intelligently generates program inputs to achieve high code coverage. 
 In our context, fuzzing intelligently selects patching strategy for each program point to unleash malicious payload. 
 
-
-
-
+<h2>Patching Results</h2>
+Our tool generated 149 patched versions for 59 malware instances. We manually verified that all the patched versions expose meaningful payloads.
