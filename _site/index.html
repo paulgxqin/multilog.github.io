@@ -88,6 +88,12 @@
         
           
           
+          <a class="page-link" href="http://localhost:4000/patch">
+            Patch
+          </a>
+        
+          
+          
           <a class="page-link" href="http://localhost:4000/dataset">
             Dataset
           </a>
@@ -115,8 +121,7 @@
     system behaviors, for example, a NIC controller witnesses network behaviors, a SATA controller
     observes hard-disk behaviors, memory controllers can be used to track memory accesses, and so
     on. These controllers can be queried to collect a rich set of events, which could be uploaded to a
-    secure cloud or sent to trusted hardware such as a GPU for subsequent intrusion detection and foren-
-    sics. The comprehensive aggregated set of traces can substantially improve, not only defense effec-
+    secure cloud or sent to trusted hardware such as a GPU for subsequent intrusion detection and forensics. The comprehensive aggregated set of traces can substantially improve, not only defense effec-
     tiveness, but also resilience in Byzantine environments where any component (outside the trusted
     compute base (TCB)) can be presumed to be compromised. For example, although ransomware
     and zip have indistinguishable file system behaviors, they can be distinguished by looking at their
@@ -124,7 +129,7 @@
     is aggregated, failures in a subset of modalities (due to cyber attacks) can be suppressed. </p>
 
     <!-- Navigation Links -->
-    <h2>Contents</h2>
+    <h2>Overview</h2>
     <!-- <ul>
         <li><a href="#overview">Overview</a></li>
         <li><a href="#software-organization">Software Organization</a></li>
@@ -134,50 +139,64 @@
         <li><a href="#usage">Usage</a></li>
         <li><a href="#behind-the-scene">Behind the Scene</a></li>
         <li><a href="#publication">Publication</a></li>
+        <li><a href="../404.html">404</a></li>
+        <li><a href="/work.html">post</a></li>
     </ul> -->
 
     <ul>
-        <li><a href="../404.html">404</a></li>
-        <li><a href="/work.html">post</a></li>
-        <li><a href="#source-code">Source Code</a></li>
-        <li><a href="#license">License</a></li>
-        <li><a href="#prerequisites-and-installation">Prerequisites and Installation</a></li>
-        <li><a href="#usage">Usage</a></li>
-        <li><a href="#behind-the-scene">Behind the Scene</a></li>
-        <li><a href="#publication">Publication</a></li>
+        <li><a href="#malware">Malware Collection</a></li>
+        <li><a href="#patch">Malware Patching</a></li>
+        <li><a href="#setup">Environment Setup</a></li>
+        <li><a href="#trace">Trace Collection</a></li>
+        <li><a href="#model">Model Training</a></li>
     </ul>
 
     <!-- Content Sections -->
-    <h2 id="overview">Overview</h2>
-    <p>overview content</p>
-    <ul>
-        <li>overview 1</li>
-        <li>overview 2</li>
-        <li>overview 3</li>
-    </ul>
 
     <h2 id="software-organization">Software Organization</h2>
     <p>11 <code>lib/</code> directory.</p>
-    <p>22</p>
 
-    <h2 id="source-code">Source Code</h2>
-    <p>11</a>.</p>
+    <h2 id="malware">Malware Collection</h2>
+    <p>
+      We have downloaded a total of 2,672 x64 malware samples from 
+        <a href="https://www.virustotal.com">VirusTotal</a> and 
+          <a href="https://malpedia.caad.fkie.fraunhofer.de/">Malpedia</a>. This collection includes 297 dynamically linked and 2,375 statically linked malware samples.
+    </p>
+
+    <h2 id="patch">Malware Patching</h2>
+    <p>Why we need patch malware?</p>
+    <ul>
+        <li>Due to the inherent nature of malware, such as evasion, cloaking, and server connections, the actual malicious payload is difficult to expose.</li>
+        <li>The execution of malware samples seems to terminate very early, possibly due to configuration issues.</li>
+    </ul>
+    <p> 
+
+    <p>How to patch malware?</p>
+    <ul>
+        <li> <a href="https://ieeexplore.ieee.org/document/9152685">PMP (SP’20)</a> is an advanced dynamic malware analysis technique that can expose actual malicious payloads regardless of malware cloaking or any similar techniques.</li>
+        <li>The main idea behind PMP is to flip predicates, enabling the dynamic execution to access deeper program states.
+            </li>
+    </ul>
+    <p> 
+
+    <p> More details can be found at <a href="../patch/">patch</a>.</p>
+
+    <h2 id="setup">Environment Setup</h2>
+    <p>We use VirtualBox to run malware, the network is configured as host-only and the disk is isolated from host. 
+    Each time, we start with the same snapshot “start_snap_for_malware” , we run malware and collect traces.</a></p>
+
+    <h2 id="trace">Trace Collection</h2>
+    <p>xxxx</p>
+
+
+    <h2 id="model">Model Training</h2>
+    <p>xxxx</a>.</p>
+
 
     <h2 id="license">License</h2>
     <p>This software release is governed by <span style="font-weight: bold;">GPL v3</span> copyright license.</a></p>
 
-    <h2 id="prerequisites-and-installation">How ?</h2>
-    <p>xxxx</a>.</p>
 
-    <h2 id="usage">Usage</h2>
-    <p>usage</p>
-
-    <h2 id="behind-the-scene">Behind the Scene</h2>
-    <p>xxxx</p>
-
-    <h2 id="publication">Publication</h2>
-    
-    <p>Copyright xxx.</p>
 
         </div>
         </div>
@@ -215,9 +234,6 @@
 
       
         <div class="footer-col footer-col-3 powered-by">
-          <p>
-            powered by <a href="https://github.com/eliottvincent/bay">Bay</a> | 2024
-          </p>
         </div>
       
     </div>

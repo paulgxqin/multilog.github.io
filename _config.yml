@@ -45,13 +45,14 @@ header:
     - name: Home
       slug: /
 
+    - name: Patch
+      slug: /patch
+
     - name: Dataset
       slug: /dataset
       
     - name: Result 
       slug: /result
-    - name: Something
-      slug: /something
 
 
 
