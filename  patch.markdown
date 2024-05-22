@@ -23,7 +23,7 @@ We call a program point that should be considered during the patching process, i
 2. How to automatically identify the patching strategy for each individual program point? Note that the searching space is huge when considering the combination. 
 * There are n program points (~300 in one malware)
 * We have m patching strategies for each program point (3 strategies)
-* In total, we can have $m^n$ potential patching versions in the searching space. ($3^{300}=10^{143}$)
+* In total, we can have $m^n$ potential patching versions in the searching space. (3<sup>300</sup> = 10<sup>143</sup>)
 
 <h2>Solution</h2>
 1. Combining PMP with static rewriting. 
