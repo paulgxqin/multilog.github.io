@@ -29,6 +29,9 @@ h4 { font-size: 12px; }
 a { color: #2a7ae2; text-decoration: none; }
 a:hover { color: #111; text-decoration: underline; }
 
+span.link { cursor: pointer; color: #2a7ae2; text-decoration: none; }
+span.link:hover { color: #111; text-decoration: underline; }
+
 /** Enforce bold (Firefox) */
 strong { font-weight: bold; }
 
@@ -105,7 +108,7 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
 .footer-col .social-links { display: flex; flex-wrap: wrap; }
 .footer-col .social-links .social-link { display: flex; width: 100%; align-items: flex-start; line-height: 16px; margin-top: 6.5px; margin-bottom: 10px; }
 .footer-col .social-links .social-link img { width: 16px; height: 16px; }
-.footer-col .social-links .social-link a { margin-left: 6px; word-break: break-all; }
+.footer-col .social-links .social-link span, .footer-col .social-links .social-link a { margin-left: 6px; word-break: break-all; }
 @media screen and (max-width: 500px) { .footer-col .social-links { font-size: 14px; line-height: 38px; } }
 
 #wechat-widget { display: none; position: absolute; background: #fff; border: #ddd 1px solid; box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25); padding: 24px; text-align: center; }

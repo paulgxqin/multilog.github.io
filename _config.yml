@@ -54,7 +54,8 @@ header:
     - name: Result 
       slug: /result
 
-
+    - name: License
+      slug: /license
 
 footer:
   show_powered_by: true
